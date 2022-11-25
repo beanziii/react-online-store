@@ -21,8 +21,6 @@ function useFetchItems(category) {
 
       setData(data);
       setIsLoading(false);
-
-      console.log(data);
     };
 
     try {
