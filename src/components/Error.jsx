@@ -1,4 +1,4 @@
-import { useRouteError } from 'react-router-dom';
+import { useRouteError, Link } from 'react-router-dom';
 
 function Error() {
   const error = useRouteError();
@@ -11,6 +11,12 @@ function Error() {
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
+
+      <span className=" bg-slate-900 px-8 py-4 text-white shadow-sm">
+        <Link to="/" className="">
+          Go back home
+        </Link>
+      </span>
     </div>
   );
 }

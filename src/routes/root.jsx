@@ -1,10 +1,12 @@
-import useFetchItems from '../hooks/useFetchItems';
+import { Link } from 'react-router-dom';
 
-const categories = [
-  'Electronics',
-  'Jewelery',
-  "Men's Clothing",
-  "Women's Clothing",
+// import useFetchItems from '../hooks/useFetchItems';
+
+export const categories = [
+  'electronics',
+  'jewelery',
+  "men's clothing",
+  "women's clothing",
 ];
 
 function Root() {
@@ -12,7 +14,7 @@ function Root() {
 
   const categoryItems = categories.map((category) => (
     <li key={category} className="cursor-pointer text-2xl hover:underline">
-      {category}
+      <Link to={`categories/${category}`}>{category}</Link>
     </li>
   ));
 

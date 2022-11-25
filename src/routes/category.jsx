@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetchItems from '../hooks/useFetchItems';
 
 function Category() {
-  const { currentCategory } = useParams();
-  const { data, isLoading } = useFetchItems(currentCategory);
+  const { category } = useParams();
+  const { data, isLoading } = useFetchItems(category);
+
+  if (!data) throw new Error('No page found for that!');
 
   return (
     <div className="flex flex-col gap-10">
-      <p>You are viewing the {currentCategory} page!</p>
+      <h1>You are viewing the {category} page!</h1>
 
       {isLoading && <p>Loading items...</p>}
 
@@ -21,8 +22,6 @@ function Category() {
           ))}
         </div>
       )}
-
-      <div className="div"></div>
     </div>
   );
 }
