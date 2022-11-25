@@ -8,8 +8,6 @@ function useFetchItems(category) {
     const getItems = async () => {
       setIsLoading(true);
 
-      console.log(category);
-
       const res = await fetch(
         `https://fakestoreapi.com/products/category/${category}`
       );

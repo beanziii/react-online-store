@@ -5,7 +5,9 @@ function Category() {
   const { category } = useParams();
   const { data, isLoading } = useFetchItems(category);
 
-  // if (data === null) throw new Error('No page found for that!');
+  if (Array.isArray(data) && data.length === 0) {
+    throw new Error('No page found');
+  }
 
   return (
     <div className="flex flex-col gap-10">
