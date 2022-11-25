@@ -2,24 +2,33 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root';
 import Error from './components/Error';
 import Category from './routes/category';
-import { categories } from './routes/root';
 
-const categoryRoutes = categories.map((category) => {
+export const categories = [
+  'electronics',
+  'jewelery',
+  "men's clothing",
+  "women's clothing",
+];
+
+const categoryRoutes = categories.map(() => {
   return {
-    path: `/categories/:category`,
+    path: `/:category`,
     element: <Category />,
     errorElement: <Error />,
   };
 });
 
 const router = createBrowserRouter([
-  { path: '/', element: <Root />, errorElement: <Error /> },
-  ...categoryRoutes,
+  {
+    path: '/',
+    element: <Root categories={categories} />,
+    errorElement: <Error />,
+    children: [...categoryRoutes],
+  },
 ]);
-
-console.log(router);
 
 function App() {
   return <RouterProvider router={router} />;
 }
+
 export default App;

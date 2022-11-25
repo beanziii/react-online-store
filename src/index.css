@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply bg-gray-100 text-gray-900;
+    @apply min-h-screen bg-gray-200 text-gray-900;
   }
 
   #root {
-    @apply container mx-auto w-full;
+    @apply container mx-auto min-h-screen w-full;
   }
 
   h1,
