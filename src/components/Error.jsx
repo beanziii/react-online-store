@@ -5,7 +5,7 @@ function Error() {
   console.error(error);
 
   return (
-    <div className="min-w-screen flex min-h-screen flex-col items-center justify-center">
+    <div className="min-w-screen flex min-h-screen flex-col items-center justify-center gap-5">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
