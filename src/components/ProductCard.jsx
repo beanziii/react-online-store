@@ -1,7 +1,7 @@
 function ProductCard({ item }) {
   console.log(item);
   return (
-    <div class="mx-auto flex max-w-md flex-col justify-between overflow-hidden rounded-xl bg-white p-6 shadow-md">
+    <div class="mx-auto flex w-full flex-col justify-between overflow-hidden rounded-xl bg-white p-6 shadow-md">
       <div>
         <img
           class="h-48 w-full object-scale-down "
