@@ -3,7 +3,7 @@ import Root from './routes/root';
 import Error from './components/Error';
 import Category from './routes/category';
 
-export const categories = [
+const categories = [
   'electronics',
   'jewelery',
   "men's clothing",
