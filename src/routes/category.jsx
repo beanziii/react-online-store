@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useFetchItems from '../hooks/useFetchItems';
+import ProductCard from '../components/ProductCard';
 
 function Category() {
   const { category } = useParams();
@@ -16,11 +17,9 @@ function Category() {
       {isLoading && <p>Loading items...</p>}
 
       {data && (
-        <div>
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 xl:grid-cols-3">
           {data.map((item) => (
-            <div key={item.id}>
-              <h2>{item.title}</h2>
-            </div>
+            <ProductCard key={item.id} item={item} />
           ))}
         </div>
       )}
