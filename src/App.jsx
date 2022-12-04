@@ -1,3 +1,4 @@
+import { NextUIProvider } from '@nextui-org/react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root';
 import Error from './components/Error';
@@ -28,7 +29,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <NextUIProvider>
+      <RouterProvider router={router} />
+    </NextUIProvider>
+  );
 }
 
 export default App;

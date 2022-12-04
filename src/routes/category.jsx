@@ -11,13 +11,13 @@ function Category() {
   }
 
   return (
-    <div className="flex flex-col gap-10">
+    <div>
       <h1>You are viewing the {category} page!</h1>
 
       {isLoading && <p>Loading items...</p>}
 
       {data && (
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 xl:grid-cols-3">
+        <div>
           {data.map((item) => (
             <ProductCard key={item.id} item={item} />
           ))}

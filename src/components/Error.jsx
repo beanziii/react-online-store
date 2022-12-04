@@ -5,14 +5,14 @@ function Error() {
   console.error(error);
 
   return (
-    <div className="min-w-screen flex min-h-screen flex-col items-center justify-center gap-5">
+    <div>
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
 
-      <span className=" bg-slate-900 px-8 py-4 text-white shadow-sm">
+      <span>
         <Link to="/" className="">
           Go back home
         </Link>

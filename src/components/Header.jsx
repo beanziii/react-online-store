@@ -1,31 +1,27 @@
+import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { Navbar } from '@nextui-org/react';
 
 function Header({ links }) {
+  const [variant, setVariant] = useState('default');
   const activeClassName = 'font-semibold underline';
 
   return (
-    <header className="mb-10 flex items-center justify-between py-2">
-      <Link to="/" className="text-xl font-bold">
-        React Online Store
-      </Link>
+    <Navbar variant="floating">
+      <Navbar.Brand>
+        <Link to="/">React Online Store</Link>
+      </Navbar.Brand>
 
-      <nav>
-        <ul className="flex items-center justify-between gap-2">
-          {links.map((link) => (
-            <li key={link}>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? activeClassName : 'font-semibold'
-                }
-                to={link.replaceAll(' ', '%20')}
-              >
-                {link.toUpperCase()}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+      <Navbar.Content>
+        {links.map((link) => (
+          <Navbar.Item key={link}>
+            <NavLink to={link.replaceAll(' ', '%20')}>
+              {link.toUpperCase()}
+            </NavLink>
+          </Navbar.Item>
+        ))}
+      </Navbar.Content>
+    </Navbar>
   );
 }
 export default Header;
